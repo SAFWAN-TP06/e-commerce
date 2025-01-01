@@ -7,6 +7,9 @@ const page = () => {
     <div className='pt-[7.469rem]'>
       <Corousel />
       <Category />
+      <div>
+        example pushh
+      </div>
     </div>
   )
 }
