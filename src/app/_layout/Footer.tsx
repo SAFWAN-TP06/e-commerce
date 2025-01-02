@@ -15,7 +15,7 @@ const Footer = () => {
                         <Link href=""><div>Shop</div></Link>
                     </div>
                 </div>
-                <div>
+                <div>ko
                     <div className='text-center'>Get in Touch</div>
                     <div className='font-light flex flex-col gap-3'>
                         <div>Address: Fort Road Kannur</div>

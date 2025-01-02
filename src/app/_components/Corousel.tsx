@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import image1 from '@public/images/djo1.jpg'
-import image2 from '@public/images/djo2.jpg'
+import image2 from '@public/images/djo5.jpg'
 import image3 from '@public/images/djo3.jpg'
 import cn from '../utlis/tailwind'
 
@@ -60,11 +60,11 @@ const Corousel = () => {
                 <button onClick={back}>{"<"}</button>
                 <button onClick={next}>{">"}</button>
             </div>
-            <div className={cn('relative px-32 text-white', { 'text-center': image == 1 },{"text-black":image == 0})}>
+            <div className={cn('relative px-32 text-white', { 'text-center text-black': image == 1 },{"text-black":image == 0})}>
                 <p className='text-[25px]'>{gallery.at(image)!.text.heading}</p>
                 <p className='text-[50px] font-serif'>{gallery.at(image)!.text.subheading}</p>
                 <p className='font-bold text-xl'>{gallery.at(image)!.text.description}</p><br />
-                <button className={cn('bg-blue-300 p-3 rounded-lg font-bold text-lg hover:border text-black',{'bg-black text-white':image == 0},{'bg-black text-white':image == 2})}>SHOP NOW</button>
+                <button className={cn('bg-blue-300 p-3 rounded-lg font-bold text-lg hover:border text-black',{'bg-black text-white':image == 0},{'bg-black text-white':image == 2},{"bg-black text-white":image == 1})}>SHOP NOW</button>
             </div>
         </div>
     )
