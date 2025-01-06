@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <div className="flex justify-between px-5 md:px-16 items-center py-10 fixed z-[80] bg-gray-400 w-[100%] shadow-xl">
+    <div className="flex justify-between px-5 md:px-16 items-center py-10 fixed z-[80] bg-black/70 w-[100%] shadow-xl">
       <div className="text-white text-[1.3rem] md:text-[1.5625rem] font-bold">E-COMMERCE</div>
       <div className="flex gap-5 md:gap-24 font-bold text-white">
         <div className="hidden md:flex gap-24 ">
@@ -18,7 +18,7 @@ const Header = () => {
              <Link href="" className="">
                ABOUT
              </Link>
-             <Link href="" className="">
+             <Link href="contact" className="">
                CONTACT
              </Link>
         </div>

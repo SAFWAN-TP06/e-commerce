@@ -16,10 +16,10 @@ const Footer = () => {
                     </div>
                 </div>
                 <div>
-                    <div className='text-center'>Get in Touch</div>
+                    <div className='text-center'>Get in Touch:</div>
                     <div className='font-light flex flex-col gap-3'>
                         <div>Address: Fort Road Kannur</div>
-                        <div>Phone: +91 9895883226</div>
+                        <div>Phone: +971 7015489578</div>
                         <div>Mail: knr@fake.com</div>
                         <div className='flex gap-3'>
                             <div className='relative h-10 w-8'>

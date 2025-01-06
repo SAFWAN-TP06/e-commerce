@@ -52,7 +52,7 @@ const Corousel = () => {
 
   return (
     <div
-      className={cn("h-[18rem] md:h-screen relative flex items-center", {
+      className={cn("h-[23rem] md:h-[45rem] lg:h-screen relative flex items-center", {
         "justify-center": image == 1,
       })}
     >
