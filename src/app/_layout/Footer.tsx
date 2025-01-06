@@ -5,7 +5,7 @@ import React from 'react'
 const Footer = () => {
     return (
         <div>
-            <div className='flex justify-between px-20 py-7 font-bold bg-slate-200'>
+            <div className='flex flex-col md:flex-row justify-between px-20 py-7 font-bold bg-slate-200'>
                 <div className='text-[20px] py-16'>E commerce</div>
                 <div className='py-12'>
                     <div className='text-center'>Links</div>
@@ -15,7 +15,7 @@ const Footer = () => {
                         <Link href=""><div>Shop</div></Link>
                     </div>
                 </div>
-                <div>ko
+                <div>
                     <div className='text-center'>Get in Touch</div>
                     <div className='font-light flex flex-col gap-3'>
                         <div>Address: Fort Road Kannur</div>

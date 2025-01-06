@@ -8,22 +8,22 @@ const Category = () => {
                 <h2 className='text-[40px] py-5'>Categories</h2>
                 <h4 className='text-[20px] pb-10'>These are our Categories</h4>
             </div>
-            <div className='grid grid-cols-3 grid-rows-2 gap-5 px-12'>
-                <div className='relative col-span-1 row-span-2 w-full h-[35rem] '>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 lg:grid-rows-2  gap-5 px-6 md:px-12'>
+                <div className='relative col-span-1 row-span-2 w-full lg:h-[35rem] h-[20rem]'>
                     <Image className='rounded-lg object-cover hover:scale-95' src="/images/djo4.jpg" alt="" fill />
                     <button className='absolute bg-gradient-to-r from-black text-white p-3 rounded bottom-5 start-5'>MEN</button>
                 </div>
-                <div className='relative col-span-1 row-span-2 w-full '>
+                <div className='relative col-span-1 row-span-2 w-full h-[20rem] lg:h-auto'>
                     <Image className='rounded-lg object-cover hover:scale-95' src="/images/billie.jpeg" alt="" fill />
                     <button className='absolute bg-gradient-to-r from-black text-white p-3 rounded bottom-5 start-5'>WOMEN</button>
 
                 </div>
-                <div className='relative w-full col-span-1 row-span-1'>
+                <div className='relative w-full col-span-1 row-span-1 h-[20rem] lg:h-auto'>
                     <Image className='rounded-lg object-cover hover:scale-95' src="/images/shoes.jpg" alt="" fill />
                     <button className='absolute bg-gradient-to-r from-black text-white p-3 rounded bottom-5 start-5'>SHOE'S</button>
 
                 </div>
-                <div className='relative w-full col-span-1 row-span-1 '>
+                <div className='relative w-full col-span-1 row-span-1 h-[20rem] lg:h-auto'>
                     <Image className='rounded-lg object-cover hover:scale-95' src="/images/kids.jpg" alt="" fill />
                     <button className='absolute bg-gradient-to-r from-black text-white p-3 rounded bottom-5 start-5'>KID'S</button>
 
