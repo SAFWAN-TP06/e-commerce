@@ -45,17 +45,17 @@ const categories = [
   },
 ];
 
-const page = async() => {
- const res = await fetch('https://dummyjson.com/products/category-list')
- const categorydynamic = await res.json()
- console.log("res::::::",categorydynamic)
+const page = async () => {
+  const res = await fetch("https://dummyjson.com/products/category-list");
+  const categorydynamic = await res.json();
+  console.log("res::::::", categorydynamic);
   return (
     <div className="p-[7.649rem]">
       <div className="relative text-center">
         <h1 className="text-[40px] pb-10">Categories</h1>
       </div>
       <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-20">
-        {categorydynamic.map((items:string, i:number) => (
+        {categorydynamic.map((items: string, i: number) => (
           <Catoo key={i} heading={items} />
         ))}
       </div>

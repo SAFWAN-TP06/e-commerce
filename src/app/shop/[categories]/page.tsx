@@ -69,7 +69,18 @@ const products = [
   },
 ];
 
-const page = () => {
+const page = async ({
+  params,
+}: {
+  params: Promise<{ categories: string }>;
+}) => {
+  const param = (await params).categories
+  console.log("param:::",param)
+  const jam = await fetch(
+    `https://dummyjson.com/products/category/${param}`
+  );
+  const productdynamic = await jam.json();
+  // console.log("jam:::::", productdynamic);
   return (
     <div className="p-[7.649rem] text-center">
       <h2 className="text-[40px]">Products</h2>
@@ -77,13 +88,15 @@ const page = () => {
         Lorem ipsum dolor sit, amet consectetur adipisicing elit..
       </h4>
       <div className="grid md:grid-cols-3 lg:grid-cols-4 lg:gap-20">
-        {products.map((items, i) => (
+        {productdynamic.products.map((items: any, i: number) => (
           <Featured
+          param={param}
+           id={items.id}
             key={i}
-            description={items.text.description}
-            heading={items.text.heading}
-            price={items.text.price}
-            image={items.image}
+            description={items.description}
+            heading={items.title}
+            price={items.price}
+            image={items.images.at(0)}
           />
         ))}
       </div>
