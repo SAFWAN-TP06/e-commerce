@@ -9,7 +9,7 @@ const Category = () => {
         <h4 className="text-[20px] pb-10">These are our Categories</h4>
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 lg:grid-rows-2  gap-10 px-6 md:px-12">
-        <div className="relative col-span-1 row-span-2 w-full h-[20rem] lg:h-[30rem] ">
+        <div className="relative col-span-1 row-span-2 w-full h-[15rem] md:h-[20rem] lg:h-[30rem] ">
           <Image
             className="rounded-lg object-cover hover:scale-95"
             src="/images/djo4.jpg"
@@ -20,7 +20,7 @@ const Category = () => {
             MEN
           </button>
         </div>
-        <div className="relative col-span-1 row-span-2 w-full h-[20rem] lg:h-auto">
+        <div className="relative col-span-1 row-span-2 w-full h-[15rem] md:h-[20rem] lg:h-auto">
           <Image
             className="rounded-lg object-cover hover:scale-95"
             src="/images/women3.jpeg"
@@ -31,7 +31,7 @@ const Category = () => {
             WOMEN
           </button>
         </div>
-        <div className="relative w-full col-span-1 row-span-1 h-[20rem] lg:h-auto">
+        <div className="relative w-full col-span-1 row-span-1  h-[15rem] md:h-[20rem] lg:h-auto">
           <Image
             className="rounded-lg object-cover hover:scale-95"
             src="/images/shoes9.jpeg"
@@ -42,7 +42,7 @@ const Category = () => {
             SHOE'S
           </button>
         </div>
-        <div className="relative w-full col-span-1 row-span-1 h-[20rem] lg:h-auto">
+        <div className="relative w-full col-span-1 row-span-1  h-[15rem] md:h-[20rem] lg:h-auto">
           <Image
             className="rounded-lg object-cover hover:scale-95"
             src="/images/kids7.jpeg"

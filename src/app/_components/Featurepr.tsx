@@ -78,10 +78,10 @@ const perfumes = [
 
 const Featurepr = () => {
   return (
-    <div className="text-center py-12">
+    <div className="text-center py-12 lg:px-20">
       <h2 className="text-[40px] pb-5">Featured Products</h2>
       <h4 className="text-[20px] pb-10">Lorem ipsum dolor sit, amet consectetur adipisicing elit..</h4>
-      <div className="grid lg:grid-cols-4 md:grid-cols-3 gap-20">
+      <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-20">
        { perfumes.map((items, i)=>
         <Featured key={i} description={items.text.description} heading={items.text.heading} price={items.text.price} image={items.image}/>
         )}

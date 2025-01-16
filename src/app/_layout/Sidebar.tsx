@@ -12,22 +12,25 @@ const Sidebar = () => {
       </div>
       {open && (
         <div className="flex fixed inset-0 w-full h-full">
-          <div className="bg-transparent w-[50%]" onClick={() => setOpen(!open)} ></div>
+          <div
+            className="bg-transparent w-[50%]"
+            onClick={() => setOpen(!open)}
+          ></div>
           <div className="bg-blue-500  w-[50%]">
-          <div className="flex flex-col gap-8 items-center pt-14">
-             <Link onClick={() => setOpen(!open)} href="/" className="">
-               HOME 
-             </Link>
-             <Link href="" className="">
-               SHOP
-             </Link>
-             <Link href="" className="">
-               ABOUT
-             </Link>
-             <Link href="" className="">
-               CONTACT
-             </Link>
-        </div>
+            <div className="flex flex-col gap-8 items-center pt-14">
+              <Link onClick={() => setOpen(!open)} href="/" className="">
+                HOME
+              </Link>
+              <Link href="" className="">
+                SHOP
+              </Link>
+              <Link href="" className="">
+                ABOUT
+              </Link>
+              <Link href="" className="">
+                CONTACT
+              </Link>
+            </div>
           </div>
         </div>
       )}

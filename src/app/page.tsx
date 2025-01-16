@@ -5,7 +5,7 @@ import Featurepr from './_components/Featurepr'
 
 const page = () => {
   return (
-    <div className='pt-[7.469rem]'>
+    <div className='pt-[7.4rem]'>
       <Corousel />
       <Category />
       <Featurepr /> 

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import image1 from "@public/images/djo1.jpg";
 import image2 from "@public/images/djo5.jpg";
@@ -49,12 +49,22 @@ const Corousel = () => {
       setImage(image - 1);
     }
   };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      next();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [image]);
 
   return (
     <div
-      className={cn("h-[23rem] md:h-[45rem] lg:h-screen relative flex items-center", {
-        "justify-center": image == 1,
-      })}
+      className={cn(
+        "h-[23rem] md:h-[45rem] lg:h-screen relative flex items-center",
+        {
+          "justify-center": image == 1,
+        }
+      )}
     >
       <Image
         className="object-cover"
@@ -70,7 +80,7 @@ const Corousel = () => {
         className={cn(
           "relative px-10 lg:px-32 md:px-20 text-white",
           { "text-center text-black": image == 1 },
-          { "text-black": image == 0 }
+          { "text-white": image == 0 }
         )}
       >
         <p className="md:text-[25px] ">{gallery.at(image)!.text.heading}</p>
@@ -84,9 +94,9 @@ const Corousel = () => {
         <button
           className={cn(
             "bg-blue-300 rounded-lg font-bold hover:border text-black p-[0.5rem] text-[0.75rem] md:text-lg ",
-            { "bg-black text-white": image == 0 },
-            { "bg-black text-white": image == 2 },
+            { "bg-white text-black": image == 0 },
             { "bg-black text-white": image == 1 },
+            { "bg-black text-white": image == 2 }
           )}
         >
           SHOP NOW
