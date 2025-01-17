@@ -75,14 +75,18 @@ const page = () => {
           </div>
           <div className="flex flex-col gap-2">
             <div>Email Address</div>
-            <textarea
+            <input
               className="border rounded-lg p-2 w-full"
               {...register("email")}
-              placeholder="Address"
+              placeholder="Email Address"
             />
             {errors.email && (
               <p className="text-red-400">{errors.email.message}</p>
             )}
+            <div className="flex flex-col gap-2">
+              <div>Address</div>
+              <textarea className="border rounded-lg p-2 w-full" placeholder="Enter Address"/>
+            </div>
           </div>
           <div className="flex flex-col gap-2">
             <div>Pincode</div>
