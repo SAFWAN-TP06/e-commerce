@@ -12,13 +12,18 @@ type Props = {
 };
 
 const Buynow = ({ product }: Props) => {
-  const { addItem, items } = useCart();
-  console.log("item:::",items)
+  const { addItem, items, addShipping } = useCart();
+  console.log("item:::", items)
   return (
     <div>
       <button
         className="bg-black text-white w-20 p-2"
-        onClick={() => addItem(product)}
+        onClick={() => { addItem(product)
+         addShipping({
+          description:"",
+          cost:12
+         }) 
+         }}
       >
         Buy Now
       </button>

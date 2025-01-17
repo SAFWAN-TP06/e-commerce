@@ -11,7 +11,8 @@ import img8 from "@public/images/perfume8.jpeg"
 
 const perfumes = [
   {
-    image: img1,
+    id:"0",
+    image: "/images/perfume1.jpeg",
     text: {
       heading: "HELMUT LANG",
       description: "A liquid mixture of fragrant essential",
@@ -19,7 +20,7 @@ const perfumes = [
     }
   },
   {
-    image: img2,
+    image: "/images/perfume2.jpeg",
     text: {
       heading: "SAUVEG",
       description: "A liquid mixture of fragrant essential",
@@ -27,7 +28,7 @@ const perfumes = [
     }
   },
   {
-    image: img3,
+    image: "/images/perfume3.jpeg",
     text: {
       heading: "CREED",
       description: "A liquid mixture of fragrant essential",
@@ -35,7 +36,7 @@ const perfumes = [
     }
   },
   {
-    image: img4,
+    image: "/images/perfume4.jpeg",
     text: {
       heading: "AZZAROO ",
       description: "A liquid mixture of fragrant essential",
@@ -43,7 +44,7 @@ const perfumes = [
     }
   },
   {
-    image: img5,
+    image: "/images/perfume5.jpeg",
     text: {
       heading: "TERRE DERMES",
       description: "A liquid mixture of fragrant essential",
@@ -51,7 +52,7 @@ const perfumes = [
     }
   },
   {
-    image: img6,
+    image: "/images/perfume6.jpeg",
     text: {
       heading: "MOKE UP",
       description: "A liquid mixture of fragrant essential",
@@ -59,7 +60,7 @@ const perfumes = [
     }
   },
   {
-    image: img7,
+    image: "/images/perfume7.jpeg",
     text: {
       heading: "COCO",
       description: "A liquid mixture of fragrant essential",
@@ -67,7 +68,8 @@ const perfumes = [
     }
   },
   {
-    image: img8,
+
+    image: "/images/perfume8.jpeg",
     text: {
       heading: "JOHN VARVATOS",
       description: "A liquid mixture of fragrant essential",
@@ -83,7 +85,7 @@ const Featurepr = () => {
       <h4 className="text-[20px] pb-10">Lorem ipsum dolor sit, amet consectetur adipisicing elit..</h4>
       <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-20">
        { perfumes.map((items, i)=>
-        <Featured key={i} description={items.text.description} heading={items.text.heading} price={items.text.price} image={items.image}/>
+        <Featured key={i} description={items.text.description} heading={items.text.heading} price={items.text.price} image={items.image} id="" param="category" />
         )}
       </div>
 

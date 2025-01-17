@@ -7,10 +7,11 @@ type Props = {
   heading?: string;
   description?: string;
   price?: number;
-  id: string;
+  id?: string;
   param: string;
+  availability: string,
 };
-const Featured = ({ image, heading, description, price, id, param }: Props) => {
+const Featured = ({ image, heading, description, price, id, param, availability }: Props) => {
   return (
     <div className=" px-12 p-3 rounded-md shadow-md ">
       <div className="relative h-[15rem] md:h-[12rem] lg:h-[8rem] xl:h-[18rem] ">
