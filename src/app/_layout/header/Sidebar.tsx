@@ -21,13 +21,13 @@ const Sidebar = () => {
               <Link onClick={() => setOpen(!open)} href="/" className="">
                 HOME
               </Link>
-              <Link href="" className="">
+              <Link href="/shop" className="">
                 SHOP
               </Link>
               <Link href="" className="">
                 ABOUT
               </Link>
-              <Link href="" className="">
+              <Link href="/contact" className="">
                 CONTACT
               </Link>
             </div>

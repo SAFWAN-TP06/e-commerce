@@ -17,13 +17,14 @@ const Buynow = ({ product }: Props) => {
   return (
     <div>
       <button
-        className="bg-black text-white w-20 p-2"
-        onClick={() => { addItem(product)
-         addShipping({
-          description:"",
-          cost:12
-         }) 
-         }}
+        className="bg-black text-white w-20 py-5 rounded-lg"
+        onClick={() => {
+          addItem(product)
+          addShipping({
+            description: "Shipping Charge",
+            cost: 15
+          })
+        }}
       >
         Buy Now
       </button>

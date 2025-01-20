@@ -10,16 +10,16 @@ const page = async ({ params }: { params: Promise<{ product: string }> }) => {
   const productdy = await fat.json();
   console.log("fat::::", productdy);
   return (
-    <div className="p-[7.649rem]">
-      <div className="flex">
-        <div className="relative w-[400px] h-[500px]">
-          <Image src={productdy.images.at(0)} alt="" fill />
+    <div className="pt-[7.649rem] px-[7.649rem] py-[5rem]">
+      <div className="flex gap-36 py-8 items-center">
+        <div className="relative w-[50%] h-[45rem]">
+          <Image className="object-cover shadow-xl" src={productdy.images.at(0)} alt="" fill />
         </div>
-        <div className="flex flex-col px-10 gap-10">
-          <h1>{productdy.title}</h1>
-          <h2>Price : {productdy.price}</h2>
-          <h4>Brand: {productdy.brand}</h4>
-          <h3>Discount % : {productdy.discountPercentage}</h3>
+        <div className="flex flex-col px-10 gap-10 pt-10 text-center">
+          <h1 className="text-[3rem]">{productdy.title}</h1>
+          <h2 className="text-[1.5rem] font-semibold">$ {productdy.price}</h2>
+          <h4 className="text-[1.5rem] font-semibold">{productdy.brand}</h4>
+          <h3 className="text-[1.2rem] font-semibold">Discount % : {productdy.discountPercentage}</h3>
           {/* <button className='bg-black text-white w-20 p-2'>Buy Now</button> */}
           <Buynow product={productdy}/>
         </div>

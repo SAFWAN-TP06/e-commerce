@@ -50,11 +50,11 @@ const page = async () => {
   const categorydynamic = await res.json();
   console.log("res::::::", categorydynamic);
   return (
-    <div className="p-[7.649rem]">
+    <div className="p-[7.649rem] flex flex-col items-center">
       <div className="relative text-center">
-        <h1 className="text-[40px] pb-10">Categories</h1>
+        <h1 className="text-[2rem] md:text-[1.8rem] pb-8">Categories</h1>
       </div>
-      <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-20">
+      <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-10 lg:gap-20 justify-center">
         {categorydynamic.map((items: string, i: number) => (
           <Catoo key={i} heading={items} />
         ))}

@@ -13,8 +13,8 @@ type Props = {
 };
 const Featured = ({ image, heading, description, price, id, param, availability }: Props) => {
   return (
-    <div className=" px-12 p-3 rounded-md shadow-md ">
-      <div className="relative h-[15rem] md:h-[12rem] lg:h-[8rem] xl:h-[18rem] ">
+    <div className="px-12 p-3 rounded-md shadow-md ">
+      <div className="relative h-[10rem] lg:h-[10rem] xl:h-[15rem] ">
         <Link href={`/shop/${param}/${id}`}>
           <Image
             src={image}
@@ -24,10 +24,10 @@ const Featured = ({ image, heading, description, price, id, param, availability 
           />
         </Link>
       </div>
-      <div className="text-center text-[20px] md:text-[15px] xl:text-[20px] fond-bold">
+      <div className="text-center text-[1rem] fond-bold">
         <h1>{heading}</h1>
-        <h2 className="font-serif line-clamp-4 text-ellipsis">{description}</h2>
-        <h2 className="font-semibold">${price}</h2>
+        <h2 className="font-serif line-clamp-2 lg:line-clamp-1 xl:line-clamp-3 text-ellipsis">{description}</h2>
+        <h2 className="font-semibold pt-5">${price}</h2>
       </div>
     </div>
   );

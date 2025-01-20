@@ -13,18 +13,18 @@ const page = () => {
         return;
     }
     return (
-        <div className='p-[7.649rem] py-40'>
-            <div className="flex flex-col lg:grid lg:grid-cols-6 px-8 lg:px-5 xl:px-10 gap-5 lg:gap-3 xl:gap-5 pt-5">
+        <div className='p-[1rem] min:h-[70vh] py-40'>
+            <div className="flex flex-col lg:grid lg:grid-cols-6 px-5 md:px-8 lg:px-5 xl:px-10 gap-10 lg:gap-3 xl:gap-5 pt-5">
                 <div className="lg:col-span-4">
                     <div className='w-full flex overflow-x-auto'>
                         <table className='border-separate border-spacing-y-4 shrink-0 w-full'>
                             <thead className='bg-slate-100 shrink-0 w-full'>
-                                <tr className='text-center'>
-                                    <td className='w-32'></td>
-                                    <td className='py-4'>Product</td>
+                                <tr className='text-center xl:text-[1.1rem] font-semibold'>
+                                    <td className='w-10 p-8'></td>
+                                    <td className='py-4 pr-4'>Product</td>
                                     <td>Price</td>
-                                    <td>Quantity</td>
-                                    <td>Subtotal</td>
+                                    <td className='pl-2'>Quantity</td>
+                                    <td className='pl-2'>Subtotal</td>
                                     <td></td>
                                 </tr>
                             </thead>
@@ -46,15 +46,15 @@ const page = () => {
                         </table>
                     </div>
                 </div>
-                <div className="lg:col-span-2 bg-gray-100 rounded-2xl p-5 md:px-10 h-[12rem] md:h-[17rem]">
+                <div className="lg:col-span-2 bg-gray-100 rounded-2xl p-5 md:px-10 h-fit items-center">
                     <div className="text-center text-[1rem] md:text-[1.8rem] font-bold pb-5 md:pb-8">Cart Total</div>
-                    <div className='flex justify-between items-center'>
-                        <div className='text-[0.8rem] md:text-[1.2rem] md:pb-3 font-bold'>Total</div>
-                        <div>{totalItemsAmount}</div>
+                    <div className='flex justify-between items-center lg:pt-2 xl:pt-2'>
+                        <div className='text-[0.8rem] md:text-[1.4rem] lg:text-[1.2rem] xl:text-[1.4rem] md:pb-3 font-semibold'>Total</div>
+                        <div className='text-[0.8rem] md:text-[1.4rem] lg:text-[1.2rem] xl:text-[1.4rem] md:pb-3 font-semibold'>{totalItemsAmount}</div>
                     </div>
-                    <div className='text-center pt-3 md:pt-0 lg:pt-3 xl:pt-10 md:pb-3'>
+                    <div className='text-center pt-3 lg:pt-10 md:pb-3'>
                         <Link href="/checkout">
-                            <button className="text-[0.7rem] md:text-[1rem] border-2 px-3 py-2 md:px-8 md:py-3 lg:px-5 xl:px-8 lg:py-2  xl:py-5  rounded-xl">
+                            <button className="text-[0.7rem] md:text-[1.2rem] lg:text-[1rem] xl:text-[1.2rem] border-2 px-3 py-2 md:px-8 md:py-3 lg:px-5 xl:px-8 lg:py-2 xl:py-2  rounded-xl">
                                 Check Out
                             </button>
                         </Link>
