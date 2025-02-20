@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import React, { useState } from "react";
+// import Link from "next/link";
+// import React, { useState } from "react";
 import Signupform from "./_components/Signupform";
 
 const page = () => {

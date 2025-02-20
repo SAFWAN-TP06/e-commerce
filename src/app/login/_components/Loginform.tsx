@@ -6,6 +6,10 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
+import { frontEndHome } from "@/api/Api";
+import Cookies from "js-cookie";
+import toast from "react-hot-toast";
 
 const loginsceheme = z.object({
   email: z.string().email("Email is Required"),
@@ -31,7 +35,24 @@ const Loginform = () => {
 
   const [show, setShow] = useState(false);
 
+  const router = useRouter();
+
   const onsubmit = async (data: Tloginscheme) => {
+    try {
+      const response = await frontEndHome.loginApi(data);
+      if (response.data.success) {
+        window.localStorage.setItem("accessToken", response.data.accessToken)
+        window.localStorage.setItem("userdata", JSON.stringify(response.data.userData))
+        Cookies.set('accessToken', response.data.accessToken)
+        toast.success(response.data.message);
+        router.push("/")
+        router.refresh()
+      }
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (errors: any) {
+      console.log(errors)
+      toast.error(errors.response.data)
+    }
     console.log("submitted data:", data);
   };
 
@@ -82,7 +103,7 @@ const Loginform = () => {
             Log in
           </button>
           <div className="flex gap-2 pb-5 lg:text-center">
-            <div>Don't have an account?</div>
+            <div>Don&apos;t have an account?</div>
             <Link href="/signup" className="text-violet-500">
               Sign up
             </Link>

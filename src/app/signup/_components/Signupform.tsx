@@ -6,6 +6,10 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
+import { frontEndHome } from "@/api/Api";
+import toast from "react-hot-toast";
+
 const loginsceheme = z
   .object({
     name: z.string().min(1, "Name is required"),
@@ -31,15 +35,31 @@ const Signupform = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm<Tloginscheme>({
     resolver: zodResolver(loginsceheme),
   });
 
   const [show, setShow] = useState(false);
 
+  const router = useRouter()
   const onsubmit = async (data: Tloginscheme) => {
     console.log("submitted data:", data);
+
+    try {
+      const response = await frontEndHome.signUpApi(data)
+      console.log("resss:::::::", response);
+      if (response.data.success) {
+        toast.success("Signup succesfully");
+        router.push("/login")
+        router.refresh()
+      }
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (errors: any) {
+      console.log(errors)
+      toast.error(errors.response.data)
+    }
   };
 
   return (
@@ -101,8 +121,8 @@ const Signupform = () => {
             <p className="text-red-700">{errors.confirmpassword.message}</p>
           )}
         </div>
-        <button className="bg-yellow-500 p-1 md:p-2 lg:p-3 rounded-xl">
-          Log in
+        <button disabled={isSubmitting} type="submit" className="bg-yellow-500 p-1 md:p-2 lg:p-3 rounded-xl">
+          Sign up
         </button>
         <div className="flex gap-2 pb-5 lg:text-center">
           <div>Allready have an account?</div>

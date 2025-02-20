@@ -1,40 +1,54 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import image1 from "@public/images/djo1.jpg";
-import image2 from "@public/images/djo5.jpg";
-import image3 from "@public/images/djo3.jpg";
+// import image1 from "@public/images/djo1.jpg";
+// import image2 from "@public/images/djo5.jpg";
+// import image3 from "@public/images/djo3.jpg";
 import cn from "../utlis/tailwind";
+import { storageUrl } from "../utlis/baseUrl";
+import Link from "next/link";
 
-const gallery = [
-  {
-    image: image1,
-    text: {
-      heading: "NEW YEAR OFFER FOR MEN'S",
-      subheading: "30% Discount",
-      description: "We know how large objects will act' but things on a small",
-    },
-  },
-  {
-    image: image2,
-    text: {
-      heading: "NEW YEAR OFFER FOR WOMEN'S",
-      subheading: "25% Discount",
-      description: "We know how large objects will act' but things on a small",
-    },
-  },
-  {
-    image: image3,
-    text: {
-      heading: "NEW YEAR OFFER FOR KID'S",
-      subheading: "50% Discount",
-      description: "We know how large objects will act' but things on a small",
-    },
-  },
-];
-const Corousel = () => {
+// const banners = [
+//   {
+//     image: image1,
+//     text: {
+//       heading: "NEW YEAR OFFER FOR MEN'S",
+//       subheading: "30% Discount",
+//       description: "We know how large objects will act' but things on a small",
+//     },
+//   },
+//   {
+//     image: image2,
+//     text: {
+//       heading: "NEW YEAR OFFER FOR WOMEN'S",
+//       subheading: "25% Discount",
+//       description: "We know how large objects will act' but things on a small",
+//     },
+//   },
+//   {
+//     image: image3,
+//     text: {
+//       heading: "NEW YEAR OFFER FOR KID'S",
+//       subheading: "50% Discount",
+//       description: "We know how large objects will act' but things on a small",
+//     },
+//   },
+// ];
+type Props = {
+  banners: [
+    {
+      _id: string,
+      name: string,
+      image: string,
+      category: string,
+    }
+  ]
+}
+const Corousel = ({ banners }: Props) => {
+  console.log("bannnerr::::", banners)
   const [image, setImage] = useState(0);
-  const totallength = gallery.length;
+  const totallength = banners.length;
   const next = () => {
     if (image == totallength - 1) {
       setImage(0);
@@ -66,30 +80,32 @@ const Corousel = () => {
         }
       )}
     >
-      <Image
-        className="object-cover"
-        src={gallery.at(image)!.image}
-        alt="djo"
-        fill
-      />
+      <Link href={`/shop/${banners.at(image)!.category}`}>
+        <Image
+          className="object-cover"
+          src={storageUrl + banners.at(image)!.image}
+          alt="djo"
+          fill
+        />
+      </Link>
       <div className="absolute flex justify-between w-full p-2 lg:p-10 text-4xl text-white z-50">
         <button onClick={back}>{"<"}</button>
         <button onClick={next}>{">"}</button>
       </div>
       <div
         className={cn(
-          "relative px-10 lg:px-32 md:px-20 text-white",
+          "relative px-10 md:px-20 lg:px-32 text-white",
           { "text-center text-black": image == 1 },
           { "text-white": image == 0 }
         )}
       >
-        <p className="md:text-[25px] ">{gallery.at(image)!.text.heading}</p>
-        <p className="md:text-[50px] sm:text-[15px] font-serif">
-          {gallery.at(image)!.text.subheading}
+        <p className="md:text-[25px] ">{banners.at(image)!.name}</p>
+        {/* <p className="md:text-[50px] sm:text-[15px] font-serif">
+          {banners.at(image)!.text.subheading}
         </p>
         <p className="font-bold md:text-xl s:text-[15px]">
-          {gallery.at(image)!.text.description}
-        </p>
+          {banners.at(image)!.text.description}
+        </p> */}
         <br />
         <button
           className={cn(

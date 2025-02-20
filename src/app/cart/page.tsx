@@ -4,8 +4,9 @@ import { useCart } from '@mrvautin/react-shoppingcart'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { storageUrl } from '../utlis/baseUrl'
 
-const page = () => {
+const CartPage = () => {
     const { items, updateItemQuantity, removeItem, totalItemsAmount } = useCart()
     console.log("item::::", items)
     const client = useClient();
@@ -31,8 +32,8 @@ const page = () => {
                             <tbody>
                                 {items.map((products, i) => (
                                     <tr key={i} className='text-center shrink-0'>
-                                        <td className='relative w-32 h-16 md:h-36'><Image src={products.images.at(0)} className='object-cover' alt="" fill /></td>
-                                        <td>{products.category}</td>
+                                        <td className='relative w-32 h-16 md:h-36'><Image src={storageUrl+ products.image} className='object-cover' alt="" fill /></td>
+                                        <td>{products.title}</td>
                                         <td>{Math.round(products.price)}</td>
                                         <td>
                                             <button onClick={() => updateItemQuantity(products, 'increase', 1)}>+</button>
@@ -65,4 +66,4 @@ const page = () => {
     )
 }
 
-export default page
+export default CartPage
